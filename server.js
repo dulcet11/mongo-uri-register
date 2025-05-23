@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+app.get('/',(req,res)=>{
+  res.send('Lanternlink API is running');
+})
+
 app.post('/api/register', async (req, res) => {
   const { username, password, block } = req.body;
   if (!username || !password || !block) {
